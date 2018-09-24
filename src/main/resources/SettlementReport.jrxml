@@ -1,0 +1,394 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="SettlementReport" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="fa7734da-73c7-4bf0-a94c-f6b0ac62d915">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<style name="table">
+		<box>
+			<pen lineWidth="1.0" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table_TH" mode="Opaque" backcolor="#F0F8FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table_CH" mode="Opaque" backcolor="#BFE1FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+		<conditionalStyle>
+			<conditionExpression><![CDATA[new Boolean($V{REPORT_COUNT}.intValue()%2==0)]]></conditionExpression>
+			<style backcolor="#EFF7FF"/>
+		</conditionalStyle>
+	</style>
+	<style name="table 1">
+		<box>
+			<pen lineWidth="1.0" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 1_TH" mode="Opaque" backcolor="#F0F8FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 1_CH" mode="Opaque" backcolor="#BFE1FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 1_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+		<conditionalStyle>
+			<conditionExpression><![CDATA[new Boolean($V{REPORT_COUNT}.intValue()%2==0)]]></conditionExpression>
+			<style backcolor="#EFF7FF"/>
+		</conditionalStyle>
+	</style>
+	<style name="table 2">
+		<box>
+			<pen lineWidth="1.0" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 2_TH" mode="Opaque" backcolor="#F0F8FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 2_CH" mode="Opaque" backcolor="#BFE1FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 2_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+		<conditionalStyle>
+			<conditionExpression><![CDATA[new Boolean($V{REPORT_COUNT}.intValue()%2==0)]]></conditionExpression>
+			<style backcolor="#EFF7FF"/>
+		</conditionalStyle>
+	</style>
+	<style name="table 3">
+		<box>
+			<pen lineWidth="1.0" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 3_TH" mode="Opaque" backcolor="#F0F8FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 3_CH" mode="Opaque" backcolor="#BFE1FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 3_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 4">
+		<box>
+			<pen lineWidth="1.0" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 4_TH" mode="Opaque" backcolor="#F0F8FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 4_CH" mode="Opaque" backcolor="#BFE1FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 4_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+		<conditionalStyle>
+			<conditionExpression><![CDATA[new Boolean($V{REPORT_COUNT}.intValue()%2==0)]]></conditionExpression>
+			<style backcolor="#EFF7FF"/>
+		</conditionalStyle>
+	</style>
+	<subDataset name="SETTLEMENT_ITEM_DATA_SET" uuid="e23b2a6c-51b7-44d6-a396-0f377458d66b">
+		<field name="description" class="java.lang.String"/>
+		<field name="totalTransactionValue" class="java.lang.String"/>
+		<field name="avgChargeRate" class="java.lang.String"/>
+		<field name="chargeExclTax" class="java.lang.String"/>
+		<field name="gstVale" class="java.lang.String"/>
+		<field name="chargeInclGst" class="java.lang.String"/>
+		<field name="paymentDeducutedValue" class="java.lang.String"/>
+	</subDataset>
+	<parameter name="SETTLEMENT_ITEM_DATA_SOURCE" class="net.sf.jasperreports.engine.data.JRBeanCollectionDataSource"/>
+	<parameter name="SETTLEMENT" class="net.sf.jasperreports.javabean.field.property"/>
+	<parameter name="CUSTOMER_ADDRESS" class="java.lang.String"/>
+	<parameter name="INV_DATE" class="java.lang.String"/>
+	<parameter name="ABN" class="java.lang.String"/>
+	<parameter name="AMOUNT_DUE" class="java.lang.String"/>
+	<parameter name="CURRENCY" class="java.lang.String"/>
+	<parameter name="INV_NO" class="java.lang.String"/>
+	<parameter name="PAYMENT_DEDCUTED" class="java.lang.String"/>
+	<field name="PAYMENT_DEDUCTED" class="java.lang.String"/>
+	<variable name="PAYMENT_DEDUCTED" class="java.lang.String">
+		<variableExpression><![CDATA[$P{PAYMENT_DEDCUTED}]]></variableExpression>
+	</variable>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="346" splitType="Stretch">
+			<image>
+				<reportElement x="8" y="11" width="207" height="78" uuid="118b91b1-2551-49a4-84c4-ced73b0e1cc2"/>
+				<imageExpression><![CDATA["/Users/harivelachumy/IdeaProjects/TibcoPDFGeneratorEngine/src/main/resources/SportstgIcon.jpg"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement x="8" y="95" width="194" height="66" uuid="2f7d2524-3cee-41eb-8d8a-ec28210b4b48"/>
+				<textElement markup="html"/>
+				<text><![CDATA[Level 12, 565, Bourke Street, <br/>Melbourne,<br/>Vic - 3000,<br/>Australia<br/>ABN 76 608 341 260]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="10" y="197" width="192" height="20" uuid="81fefd83-dbf6-4809-b46f-464d24615b10"/>
+				<textElement>
+					<font size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Customer]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="10" y="223" width="207" height="60" uuid="a8443e82-c706-400e-a672-d478efbef471"/>
+				<textElement markup="html"/>
+				<textFieldExpression><![CDATA[$P{CUSTOMER_ADDRESS}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="290" y="93" width="140" height="24" uuid="09a7b12e-3013-49f6-bf9d-9a81b24bde86"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[Currency]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="290" y="117" width="140" height="24" uuid="815b3fbe-b7f8-414a-8717-768c88a9ed0c"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[Amount Due]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="290" y="11" width="200" height="34" uuid="0ae4ef0a-fb13-4a34-a192-d1a082ab7fdf"/>
+				<textElement>
+					<font size="15"/>
+				</textElement>
+				<text><![CDATA[Tax Invoice / Receipt]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="290" y="45" width="140" height="24" uuid="491f5502-d990-4096-96a8-c507718be3c3"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[Date]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="290" y="69" width="140" height="24" uuid="217abd33-d635-4866-88a4-5f628463709f"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[Invoice/Receipt #]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="435" y="93" width="100" height="24" uuid="33ba1b5a-ea90-4d2f-a0a0-f96aeb4c36a6"/>
+				<textFieldExpression><![CDATA[$P{CURRENCY}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="435" y="45" width="100" height="24" uuid="c2392450-fd9a-4106-8203-adc0cbe287de"/>
+				<textFieldExpression><![CDATA[$P{INV_DATE}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="435" y="117" width="100" height="24" uuid="26eeb7a7-1eb5-452b-8812-147430934110"/>
+				<textFieldExpression><![CDATA[$P{AMOUNT_DUE}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="435" y="69" width="100" height="24" uuid="8d05642b-392e-4ad0-8b81-2607cef794f4"/>
+				<textFieldExpression><![CDATA[$P{INV_NO}]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<detail>
+		<band height="183" splitType="Stretch">
+			<componentElement>
+				<reportElement key="table 4" style="table 4" x="0" y="0" width="555" height="183" isRemoveLineWhenBlank="true" uuid="c8fa4ed3-a02b-425c-9ada-00f4d0197fde"/>
+				<jr:table xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd">
+					<datasetRun subDataset="SETTLEMENT_ITEM_DATA_SET" uuid="1fc3def5-10f0-49cc-b17e-5d594fca270c">
+						<dataSourceExpression><![CDATA[$P{SETTLEMENT_ITEM_DATA_SOURCE}]]></dataSourceExpression>
+					</datasetRun>
+					<jr:columnGroup width="465" uuid="4b327f5e-6cff-40cb-a906-fa19f766a6b8">
+						<jr:tableFooter height="30" rowSpan="1">
+							<box>
+								<pen lineWidth="0.5"/>
+								<topPen lineWidth="0.5"/>
+								<leftPen lineWidth="0.5"/>
+								<bottomPen lineWidth="0.5"/>
+								<rightPen lineWidth="0.5"/>
+							</box>
+							<staticText>
+								<reportElement x="4" y="0" width="416" height="30" uuid="09b3e713-db81-4b1a-bcb6-e162235cb6b6"/>
+								<text><![CDATA[Payment deducted from settlement]]></text>
+							</staticText>
+						</jr:tableFooter>
+						<jr:column width="131" uuid="39c35d2d-b7fc-4800-a33d-044e4e4fa7b4">
+							<jr:tableFooter style="table 4_TH" height="30" rowSpan="1"/>
+							<jr:columnHeader style="table 4_CH" height="30" rowSpan="1">
+								<staticText>
+									<reportElement x="0" y="0" width="90" height="30" uuid="c19b1145-0dfe-4963-be9a-e3672278e55c"/>
+									<textElement textAlignment="Center"/>
+									<text><![CDATA[Description]]></text>
+								</staticText>
+							</jr:columnHeader>
+							<jr:detailCell style="table 4_TD" height="20" rowSpan="1">
+								<textField>
+									<reportElement x="0" y="0" width="116" height="20" uuid="60397b95-bd39-4258-b2bd-1b43c550991e"/>
+									<textElement textAlignment="Center"/>
+									<textFieldExpression><![CDATA[$F{description}]]></textFieldExpression>
+								</textField>
+							</jr:detailCell>
+						</jr:column>
+						<jr:column width="90" uuid="63261bae-27ac-43d6-a61d-6d81f21d6051">
+							<jr:tableFooter style="table 4_TH" height="30" rowSpan="1"/>
+							<jr:columnHeader style="table 4_CH" height="30" rowSpan="1">
+								<staticText>
+									<reportElement x="0" y="0" width="90" height="30" uuid="3a05f5c3-4374-43e7-bf43-66208ba7dde3"/>
+									<textElement textAlignment="Center"/>
+									<text><![CDATA[Total Transaction Value:]]></text>
+								</staticText>
+							</jr:columnHeader>
+							<jr:detailCell style="table 4_TD" height="20" rowSpan="1">
+								<textField>
+									<reportElement x="0" y="0" width="68" height="20" uuid="f31b2761-373f-4188-9893-8fdf40a2c4ec"/>
+									<textElement textAlignment="Center"/>
+									<textFieldExpression><![CDATA[$F{totalTransactionValue}]]></textFieldExpression>
+								</textField>
+							</jr:detailCell>
+						</jr:column>
+						<jr:column width="90" uuid="23fdcfe0-ac4c-481d-87e5-ea8296d34033">
+							<jr:tableFooter style="table 4_TH" height="30" rowSpan="1"/>
+							<jr:columnHeader style="table 4_CH" height="30" rowSpan="1">
+								<staticText>
+									<reportElement x="0" y="0" width="90" height="30" uuid="12b19600-e080-4a34-acb7-5f6aeb7c8be7"/>
+									<textElement textAlignment="Center"/>
+									<text><![CDATA[Avg. Charge rate excl GST(%):]]></text>
+								</staticText>
+							</jr:columnHeader>
+							<jr:detailCell style="table 4_TD" height="20" rowSpan="1">
+								<textField>
+									<reportElement x="0" y="0" width="68" height="20" uuid="906e94fe-6dd5-41d7-a242-fc9b967dfce9"/>
+									<textElement textAlignment="Center"/>
+									<textFieldExpression><![CDATA[$F{avgChargeRate}]]></textFieldExpression>
+								</textField>
+							</jr:detailCell>
+						</jr:column>
+						<jr:column width="90" uuid="62582b1f-1700-41c0-a70e-17034b9559cf">
+							<jr:tableFooter style="table 4_TH" height="30" rowSpan="1"/>
+							<jr:columnHeader style="table 4_CH" height="30" rowSpan="1">
+								<staticText>
+									<reportElement x="0" y="0" width="90" height="30" uuid="a2782ab4-e706-47da-b0f1-3ce3240ee2fe"/>
+									<textElement textAlignment="Center"/>
+									<text><![CDATA[Charges excl. GST:]]></text>
+								</staticText>
+							</jr:columnHeader>
+							<jr:detailCell style="table 4_TD" height="20" rowSpan="1">
+								<textField>
+									<reportElement x="0" y="0" width="68" height="20" uuid="0c8e1647-f70f-412c-8c4a-9403cd309539"/>
+									<textElement textAlignment="Center"/>
+									<textFieldExpression><![CDATA[$F{chargeExclTax}]]></textFieldExpression>
+								</textField>
+							</jr:detailCell>
+						</jr:column>
+						<jr:column width="64" uuid="9812ff77-c248-4802-8965-1463d99e98c2">
+							<jr:tableFooter style="table 4_TH" height="30" rowSpan="1"/>
+							<jr:columnHeader style="table 4_CH" height="30" rowSpan="1">
+								<staticText>
+									<reportElement x="0" y="0" width="50" height="30" uuid="ad60728c-7294-4178-bb9e-07f9d6f0ccb8"/>
+									<textElement textAlignment="Center"/>
+									<text><![CDATA[GST:]]></text>
+								</staticText>
+							</jr:columnHeader>
+							<jr:detailCell style="table 4_TD" height="20" rowSpan="1">
+								<textField>
+									<reportElement x="0" y="0" width="50" height="20" uuid="504e9bf5-3d27-41b3-a5ee-ae4c30813cc5"/>
+									<textElement textAlignment="Center"/>
+									<textFieldExpression><![CDATA[$F{gstVale}]]></textFieldExpression>
+								</textField>
+							</jr:detailCell>
+						</jr:column>
+					</jr:columnGroup>
+					<jr:columnGroup width="107" uuid="88df8769-888c-4c60-b3ab-1bf8badd028f">
+						<jr:tableFooter height="30" rowSpan="1">
+							<box>
+								<pen lineWidth="0.5"/>
+								<topPen lineWidth="0.5"/>
+								<leftPen lineWidth="0.5"/>
+								<bottomPen lineWidth="0.5"/>
+								<rightPen lineWidth="0.5"/>
+							</box>
+							<textField>
+								<reportElement x="0" y="0" width="68" height="30" uuid="d7d92f61-4aa4-4072-b7a8-c32d5f801c52"/>
+								<textElement textAlignment="Center"/>
+								<textFieldExpression><![CDATA["(" + $F{paymentDeducutedValue} + ")"]]></textFieldExpression>
+							</textField>
+						</jr:tableFooter>
+						<jr:column width="107" uuid="9c890275-2f5c-43ff-af13-a2ae17c41d9e">
+							<jr:tableFooter style="table 4_TH" height="30" rowSpan="1"/>
+							<jr:columnHeader style="table 4_CH" height="30" rowSpan="1">
+								<staticText>
+									<reportElement x="0" y="0" width="90" height="30" uuid="f82b003a-07e7-445d-b0ad-c87f59a7f6d7"/>
+									<textElement textAlignment="Center"/>
+									<text><![CDATA[Charges Incl. GST:]]></text>
+								</staticText>
+							</jr:columnHeader>
+							<jr:detailCell style="table 4_TD" height="20" rowSpan="1">
+								<textField>
+									<reportElement x="0" y="0" width="68" height="20" uuid="582eb69e-a53b-4c17-9e51-99161e2cd9f0"/>
+									<textElement textAlignment="Center"/>
+									<textFieldExpression><![CDATA[$F{chargeInclGst}]]></textFieldExpression>
+								</textField>
+							</jr:detailCell>
+						</jr:column>
+					</jr:columnGroup>
+				</jr:table>
+			</componentElement>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="78" splitType="Stretch">
+			<staticText>
+				<reportElement x="8" y="8" width="304" height="37" uuid="aae63897-1d6c-40b3-8202-006e275a48c4"/>
+				<textElement markup="html"/>
+				<text><![CDATA[This is a copy invoice for your records detailing your transaction charges for the period indicated. No payment is <br/>required as all transaction charges have already been paid in full and deducted from settlement. Please email us <br/> at accounts@sportstg.com if you have any queries.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="468" y="8" width="70" height="23" uuid="4255ddc3-2bdc-46bb-b23d-a0827594fed0"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Amount Due]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="468" y="31" width="70" height="31" uuid="41471bbd-b1fb-4ccd-a3d7-13a4cad2733a"/>
+				<textElement>
+					<font size="13" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{AMOUNT_DUE}]]></textFieldExpression>
+			</textField>
+		</band>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+</jasperReport>
