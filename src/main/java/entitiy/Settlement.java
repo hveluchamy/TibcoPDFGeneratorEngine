@@ -32,8 +32,6 @@ public class Settlement implements Serializable {
         this.customerDetails = customerDetails;
     }
 
-
-
     public String getInvoiceDate() {
         return invoiceDate;
     }
