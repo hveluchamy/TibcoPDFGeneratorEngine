@@ -34,7 +34,6 @@ public class Settlement implements Serializable {
 
 
 
-
     public String getInvoiceDate() {
         return invoiceDate;
     }
