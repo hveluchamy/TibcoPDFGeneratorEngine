@@ -57,7 +57,8 @@ public class FirstIntegrationPoint {
         settlement.setCustomerDetails(customerDetails);
 
         JasperReportManager jsp = new JasperReportManager();
-        jsp.generateDocument("SETTLEMENT", settlement);
+        System.out.println(jsp.generateDocument("SETTLEMENT", settlement));
+        System.out.println(jsp.deleteDocument("INV132131hp.pdf"));
 
 
     }
