@@ -11,6 +11,7 @@ public class Settlement implements Serializable {
     private String abnNumber;
 
 
+    private SettlementItem settlementItemVal;
 
     private String paymentDeducutedValue;
     private List<SettlementItem> settlementItem;
@@ -31,6 +32,9 @@ public class Settlement implements Serializable {
     public void setCustomerDetails(CustomerDetails customerDetails) {
         this.customerDetails = customerDetails;
     }
+
+
+
 
     public String getInvoiceDate() {
         return invoiceDate;
@@ -80,4 +84,11 @@ public class Settlement implements Serializable {
         this.paymentDeducutedValue = paymentDeducutedValue;
     }
 
+    public SettlementItem getSettlementItemVal() {
+        return settlementItemVal;
+    }
+
+    public void setSettlementItemVal(SettlementItem settlementItemVal) {
+        this.settlementItemVal = settlementItemVal;
+    }
 }

@@ -1,24 +1,34 @@
 package manager;
 
 import JasperTemplateGenerator.SettlementGenerator;
+import JasperTemplateGenerator.TemplateGenerator;
+import entitiy.PropertyDetailsSingleton;
 import entitiy.Settlement;
 import net.sf.jasperreports.engine.JRException;
 
+import java.io.File;
 import java.io.IOException;
 import java.io.Serializable;
+import java.util.Properties;
 
 public class JasperReportManager implements Serializable {
 
+    private static Properties properties = PropertyDetailsSingleton.getPropertyInstance();
+    private static String exportPath = properties.getProperty("settlement.export.destination");
+
     public static final String SETTLEMENT = "SETTLEMENT";
-    //TODO in the future if you want to extend this, the parameter has to by generic for specific document type
-    //Thats for future
-    public void generateDocument(String reportType, Settlement settlement) throws IOException, JRException {
-        //dosomething
+    public String generateDocument(String reportType, Object object) throws IOException, JRException {
+        TemplateGenerator templateGenerator;
         if (SETTLEMENT.equals(reportType)) {
-            SettlementGenerator sm = new SettlementGenerator();
-            sm.generateTemplate(settlement);
+            templateGenerator = new SettlementGenerator();
+            return templateGenerator.generateTemplate(object);
         }
+        return null;
 
+    }
 
+    public boolean deleteDocument(String filename){
+        File file = new File(exportPath + filename);
+        return file.delete();
     }
 }

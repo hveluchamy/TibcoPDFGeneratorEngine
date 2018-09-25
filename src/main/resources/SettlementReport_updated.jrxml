@@ -119,6 +119,74 @@
 			<style backcolor="#EFF7FF"/>
 		</conditionalStyle>
 	</style>
+	<style name="table 5">
+		<box>
+			<pen lineWidth="1.0" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 5_TH" mode="Opaque" backcolor="#F0F8FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 5_CH" mode="Opaque" backcolor="#BFE1FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 5_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 6">
+		<box>
+			<pen lineWidth="1.0" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 6_TH" mode="Opaque" backcolor="#F0F8FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 6_CH" mode="Opaque" backcolor="#BFE1FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 6_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+		<conditionalStyle>
+			<conditionExpression><![CDATA[new Boolean($V{REPORT_COUNT}.intValue()%2==0)]]></conditionExpression>
+			<style backcolor="#EFF7FF"/>
+		</conditionalStyle>
+	</style>
+	<style name="table 7">
+		<box>
+			<pen lineWidth="1.0" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 7_TH" mode="Opaque" backcolor="#F0F8FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 7_CH" mode="Opaque" backcolor="#BFE1FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 7_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+		<conditionalStyle>
+			<conditionExpression><![CDATA[new Boolean($V{REPORT_COUNT}.intValue()%2==0)]]></conditionExpression>
+			<style backcolor="#EFF7FF"/>
+		</conditionalStyle>
+	</style>
 	<subDataset name="SETTLEMENT_ITEM_DATA_SET" uuid="e23b2a6c-51b7-44d6-a396-0f377458d66b">
 		<field name="description" class="java.lang.String"/>
 		<field name="totalTransactionValue" class="java.lang.String"/>
@@ -223,144 +291,122 @@
 	<detail>
 		<band height="183" splitType="Stretch">
 			<componentElement>
-				<reportElement key="table 4" style="table 4" x="0" y="0" width="538" height="183" isRemoveLineWhenBlank="true" uuid="c8fa4ed3-a02b-425c-9ada-00f4d0197fde"/>
+				<reportElement key="table 7" style="table 7" x="8" y="27" width="527" height="135" uuid="23e56114-cd82-4693-8261-c4f5243d9630"/>
 				<jr:table xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd">
-					<datasetRun subDataset="SETTLEMENT_ITEM_DATA_SET" uuid="1fc3def5-10f0-49cc-b17e-5d594fca270c">
+					<datasetRun subDataset="SETTLEMENT_ITEM_DATA_SET" uuid="3504dc0f-ced3-4512-b9bc-4ed5b4a8d3fc">
 						<dataSourceExpression><![CDATA[$P{SETTLEMENT_ITEM_DATA_SOURCE}]]></dataSourceExpression>
 					</datasetRun>
-					<jr:columnGroup width="451" uuid="4b327f5e-6cff-40cb-a906-fa19f766a6b8">
-						<jr:tableFooter height="30" rowSpan="1">
-							<box>
-								<pen lineWidth="0.5"/>
-								<topPen lineWidth="0.5"/>
-								<leftPen lineWidth="0.5"/>
-								<bottomPen lineWidth="0.5"/>
-								<rightPen lineWidth="0.5"/>
-							</box>
+					<jr:columnGroup width="460" uuid="93d1ad89-1614-4078-8b70-13ff8695d7a8">
+						<jr:columnFooter height="28" rowSpan="1">
 							<staticText>
-								<reportElement x="4" y="0" width="416" height="30" uuid="09b3e713-db81-4b1a-bcb6-e162235cb6b6"/>
+								<reportElement x="0" y="0" width="320" height="26" uuid="90f7e3e2-2af8-467d-a519-545d83c0a82e"/>
 								<text><![CDATA[Payment deducted from settlement]]></text>
 							</staticText>
-						</jr:tableFooter>
-						<jr:column width="126" uuid="39c35d2d-b7fc-4800-a33d-044e4e4fa7b4">
-							<jr:tableFooter style="table 4_TH" height="30" rowSpan="1"/>
-							<jr:columnHeader style="table 4_CH" height="30" rowSpan="1">
+						</jr:columnFooter>
+						<jr:column width="140" uuid="0fc9b2f1-0642-45a2-a368-7f2bdcc5afb9">
+							<jr:columnHeader style="table 7_CH" height="30" rowSpan="1">
 								<staticText>
-									<reportElement x="0" y="0" width="90" height="30" uuid="c19b1145-0dfe-4963-be9a-e3672278e55c"/>
+									<reportElement x="0" y="0" width="140" height="30" uuid="603232ee-7f3e-4e3e-ab18-dc9b7f14e568"/>
 									<textElement textAlignment="Center"/>
 									<text><![CDATA[Description]]></text>
 								</staticText>
 							</jr:columnHeader>
-							<jr:detailCell style="table 4_TD" height="20" rowSpan="1">
+							<jr:detailCell style="table 7_TD" height="20" rowSpan="1">
 								<textField>
-									<reportElement x="0" y="0" width="116" height="20" uuid="60397b95-bd39-4258-b2bd-1b43c550991e"/>
+									<reportElement x="0" y="0" width="140" height="20" uuid="7a4cbe50-82f0-45ec-9d8f-2ec7de9ef4fc"/>
 									<textElement textAlignment="Center"/>
 									<textFieldExpression><![CDATA[$F{description}]]></textFieldExpression>
 								</textField>
 							</jr:detailCell>
 						</jr:column>
-						<jr:column width="90" uuid="63261bae-27ac-43d6-a61d-6d81f21d6051">
-							<jr:tableFooter style="table 4_TH" height="30" rowSpan="1"/>
-							<jr:columnHeader style="table 4_CH" height="30" rowSpan="1">
+						<jr:column width="90" uuid="7403a7ad-4870-41ef-8f16-5ed0616a233a">
+							<jr:columnHeader style="table 7_CH" height="30" rowSpan="1">
 								<staticText>
-									<reportElement x="0" y="0" width="90" height="30" uuid="3a05f5c3-4374-43e7-bf43-66208ba7dde3"/>
+									<reportElement x="0" y="0" width="90" height="30" uuid="e0e27d7b-791f-432a-9a00-fde390bfbc97"/>
 									<textElement textAlignment="Center"/>
 									<text><![CDATA[Total Transaction Value:]]></text>
 								</staticText>
 							</jr:columnHeader>
-							<jr:detailCell style="table 4_TD" height="20" rowSpan="1">
+							<jr:detailCell style="table 7_TD" height="20" rowSpan="1">
 								<textField>
-									<reportElement x="0" y="0" width="50" height="20" uuid="f31b2761-373f-4188-9893-8fdf40a2c4ec"/>
+									<reportElement x="0" y="0" width="50" height="20" uuid="aeb691d9-c3ef-418c-aac4-4969f49a97a8"/>
 									<textElement textAlignment="Center"/>
 									<textFieldExpression><![CDATA[$F{totalTransactionValue}]]></textFieldExpression>
 								</textField>
 							</jr:detailCell>
 						</jr:column>
-						<jr:column width="90" uuid="23fdcfe0-ac4c-481d-87e5-ea8296d34033">
-							<jr:tableFooter style="table 4_TH" height="30" rowSpan="1"/>
-							<jr:columnHeader style="table 4_CH" height="30" rowSpan="1">
+						<jr:column width="90" uuid="a4815afb-1cda-44ad-83c0-affee5850b15">
+							<jr:columnHeader style="table 7_CH" height="30" rowSpan="1">
 								<staticText>
-									<reportElement x="0" y="0" width="90" height="30" uuid="12b19600-e080-4a34-acb7-5f6aeb7c8be7"/>
+									<reportElement x="0" y="0" width="90" height="30" uuid="74f62044-80a6-437f-895b-6fe92f82a023"/>
 									<textElement textAlignment="Center"/>
 									<text><![CDATA[Avg. Charge rate excl GST(%):]]></text>
 								</staticText>
 							</jr:columnHeader>
-							<jr:detailCell style="table 4_TD" height="20" rowSpan="1">
+							<jr:detailCell style="table 7_TD" height="20" rowSpan="1">
 								<textField>
-									<reportElement x="0" y="0" width="50" height="20" uuid="906e94fe-6dd5-41d7-a242-fc9b967dfce9"/>
+									<reportElement x="0" y="0" width="50" height="20" uuid="ccc8795d-3dcd-4fea-9afd-3af382c7c5e7"/>
 									<textElement textAlignment="Center"/>
 									<textFieldExpression><![CDATA[$F{avgChargeRate}]]></textFieldExpression>
 								</textField>
 							</jr:detailCell>
 						</jr:column>
-						<jr:column width="90" uuid="62582b1f-1700-41c0-a70e-17034b9559cf">
-							<jr:tableFooter style="table 4_TH" height="30" rowSpan="1"/>
-							<jr:columnHeader style="table 4_CH" height="30" rowSpan="1">
+						<jr:column width="90" uuid="3065517e-b4e6-4646-baf7-d72f2441236a">
+							<jr:columnHeader style="table 7_CH" height="30" rowSpan="1">
 								<staticText>
-									<reportElement x="0" y="0" width="90" height="30" uuid="a2782ab4-e706-47da-b0f1-3ce3240ee2fe"/>
+									<reportElement x="0" y="0" width="90" height="30" uuid="da342347-db2c-402b-8214-074469feeb12"/>
 									<textElement textAlignment="Center"/>
 									<text><![CDATA[Charges excl. GST:]]></text>
 								</staticText>
 							</jr:columnHeader>
-							<jr:detailCell style="table 4_TD" height="20" rowSpan="1">
+							<jr:detailCell style="table 7_TD" height="20" rowSpan="1">
 								<textField>
-									<reportElement x="0" y="0" width="50" height="20" uuid="0c8e1647-f70f-412c-8c4a-9403cd309539"/>
+									<reportElement x="0" y="0" width="50" height="20" uuid="c9bbe6ac-ad5a-4554-9ddf-fd609257cbe1"/>
 									<textElement textAlignment="Center"/>
 									<textFieldExpression><![CDATA[$F{chargeExclTax}]]></textFieldExpression>
 								</textField>
 							</jr:detailCell>
 						</jr:column>
-						<jr:column width="55" uuid="9812ff77-c248-4802-8965-1463d99e98c2">
-							<jr:tableFooter style="table 4_TH" height="30" rowSpan="1"/>
-							<jr:columnHeader style="table 4_CH" height="30" rowSpan="1">
+						<jr:column width="50" uuid="f1771971-b84c-4b45-af6d-c5a83c8f33c2">
+							<jr:columnHeader style="table 7_CH" height="30" rowSpan="1">
 								<staticText>
-									<reportElement x="0" y="0" width="50" height="30" uuid="ad60728c-7294-4178-bb9e-07f9d6f0ccb8"/>
+									<reportElement x="0" y="0" width="50" height="30" uuid="67144e41-1f31-4b95-b500-8587bada8811"/>
 									<textElement textAlignment="Center"/>
 									<text><![CDATA[GST:]]></text>
 								</staticText>
 							</jr:columnHeader>
-							<jr:detailCell style="table 4_TD" height="20" rowSpan="1">
+							<jr:detailCell style="table 7_TD" height="20" rowSpan="1">
 								<textField>
-									<reportElement x="0" y="0" width="50" height="20" uuid="504e9bf5-3d27-41b3-a5ee-ae4c30813cc5"/>
+									<reportElement x="0" y="0" width="50" height="20" uuid="1d03248e-275f-4a50-8edb-f5ff817e6ad3"/>
 									<textElement textAlignment="Center"/>
 									<textFieldExpression><![CDATA[$F{gstVale}]]></textFieldExpression>
 								</textField>
 							</jr:detailCell>
 						</jr:column>
 					</jr:columnGroup>
-					<jr:columnGroup width="102" uuid="88df8769-888c-4c60-b3ab-1bf8badd028f">
-						<jr:tableFooter height="30" rowSpan="1">
-							<box>
-								<pen lineWidth="0.5"/>
-								<topPen lineWidth="0.5"/>
-								<leftPen lineWidth="0.5"/>
-								<bottomPen lineWidth="0.5"/>
-								<rightPen lineWidth="0.5"/>
-							</box>
+					<jr:column width="90" uuid="cb1bddea-7f10-460e-97ea-43ae35aaf519">
+						<jr:columnHeader style="table 7_CH" height="30" rowSpan="1">
+							<staticText>
+								<reportElement x="0" y="0" width="90" height="30" uuid="fc272514-430c-43fd-9f66-53e6263a9549"/>
+								<textElement textAlignment="Center"/>
+								<text><![CDATA[Charges Incl. GST:]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:columnFooter height="28" rowSpan="1">
 							<textField>
-								<reportElement x="0" y="0" width="50" height="30" uuid="d7d92f61-4aa4-4072-b7a8-c32d5f801c52"/>
+								<reportElement x="0" y="0" width="64" height="26" uuid="87f6f7e2-faaa-416d-bf2a-b8a9e595fa2f"/>
 								<textElement textAlignment="Center"/>
 								<textFieldExpression><![CDATA["(" + $F{paymentDeducutedValue} + ")"]]></textFieldExpression>
 							</textField>
-						</jr:tableFooter>
-						<jr:column width="102" uuid="9c890275-2f5c-43ff-af13-a2ae17c41d9e">
-							<jr:tableFooter style="table 4_TH" height="30" rowSpan="1"/>
-							<jr:columnHeader style="table 4_CH" height="30" rowSpan="1">
-								<staticText>
-									<reportElement x="0" y="0" width="90" height="30" uuid="f82b003a-07e7-445d-b0ad-c87f59a7f6d7"/>
-									<textElement textAlignment="Center"/>
-									<text><![CDATA[Charges Incl. GST:]]></text>
-								</staticText>
-							</jr:columnHeader>
-							<jr:detailCell style="table 4_TD" height="20" rowSpan="1">
-								<textField>
-									<reportElement x="0" y="0" width="50" height="20" uuid="582eb69e-a53b-4c17-9e51-99161e2cd9f0"/>
-									<textElement textAlignment="Center"/>
-									<textFieldExpression><![CDATA[$F{chargeInclGst}]]></textFieldExpression>
-								</textField>
-							</jr:detailCell>
-						</jr:column>
-					</jr:columnGroup>
+						</jr:columnFooter>
+						<jr:detailCell style="table 7_TD" height="20" rowSpan="1">
+							<textField>
+								<reportElement x="0" y="0" width="50" height="20" uuid="dc714be2-fa45-423d-b861-b217340a749a"/>
+								<textElement textAlignment="Center"/>
+								<textFieldExpression><![CDATA[$F{chargeInclGst}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
 				</jr:table>
 			</componentElement>
 		</band>
